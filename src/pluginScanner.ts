@@ -8,6 +8,12 @@ import openValheim from "./openValheim";
 const pluginDirectory = path.join(__dirname, "../", "plugins");
 
 export const pluginScanner = () => {
+  const tmp = path.join(__dirname, "tmp");
+
+  if (!fs.existsSync(tmp)) {
+    fs.mkdirSync(tmp);
+  }
+
   const plugins = fs.readdirSync(path.join(pluginDirectory));
   const dlls: { loaded: string[]; [key: string]: any } = {
     loaded: [],
