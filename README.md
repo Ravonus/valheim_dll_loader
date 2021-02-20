@@ -2,9 +2,13 @@ Install Node.js : https://nodejs.org/en/
 
 CD into the project directory you just installed the manager at.
 
-Run npm i (Installs modules needed)
+Run next two commands - One installs, Other starts
 
-npm start (Start - App)
+npm i
+
+npm start
+
+--
 
 On first run the app will ask you for your valheim game directory path. Go ahead and give it that.
 
