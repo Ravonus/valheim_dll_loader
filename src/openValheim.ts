@@ -14,7 +14,7 @@ export default async function startValheim(
 ) {
   const exePath = exe.replace("/valheim.exe", "");
 
-  let pid = exec(`cd /D ${exePath} & dir & ${exe}`);
+  let pid = exec(`cd /D "${exePath}" & "${exe}"`);
 
   pid.on("error", (error) => {
     console.log(`error: ${error.message}`);

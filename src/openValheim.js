@@ -13,7 +13,7 @@ let isWin = process.platform === "win32";
 let isRunning;
 async function startValheim(exe, dlls, dataPath) {
     const exePath = exe.replace("/valheim.exe", "");
-    let pid = child_process_1.exec(`cd /D ${exePath} & dir & ${exe}`);
+    let pid = child_process_1.exec(`cd /D "${exePath}" & "${exe}"`);
     pid.on("error", (error) => {
         console.log(`error: ${error.message}`);
         //  startValheim();
