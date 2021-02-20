@@ -12,6 +12,10 @@ const copyDLLs_1 = require("./copyDLLs");
 const openValheim_1 = __importDefault(require("./openValheim"));
 const pluginDirectory = path_1.default.join(__dirname, "../", "plugins");
 exports.pluginScanner = () => {
+    const tmp = path_1.default.join(__dirname, "tmp");
+    if (!fs_1.default.existsSync(tmp)) {
+        fs_1.default.mkdirSync(tmp);
+    }
     const plugins = fs_1.default.readdirSync(path_1.default.join(pluginDirectory));
     const dlls = {
         loaded: [],
